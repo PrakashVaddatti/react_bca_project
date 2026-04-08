@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  /* Top banner */
+  .top-banner {
+    background-color: #003087;
+    color: white;
+    text-align: center;
+    padding: 8px;
+
+    font-size: 14px;
+  }
+ 
+  /* Navbar container */
+  .navbar {
+    display: flex;
+    align-items: center;
+    padding: 15px 40px;
+    width: 100%;
+    background-color: transparent;
+    margin-right: 10%;
+    border-bottom: 1px solid #231c1c;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .navbar .left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .logo img {
+    height: 20px;
+  }
+
+  .menu a {
+    margin-right: 25px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+  }
+
+  .menu a.active {
+    font-weight: bold;
+    border-bottom: 3px solid #003087;
+    padding-bottom: 2px;
+  }
+
+  .search-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .search{
+    height: 10px;
+    margin-top: 5%;
+    text-align: center;
+    background-color: transparent;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #351fb1;
+    border-radius: 25px;
+    padding: 8px 15px;
+    width: 250px;
+    height:50px;
+  }
+
+  .search-box input {
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    height: 20px;
+  }
+
+  .search-box i {
+    color: #555;
+
+  }
+
+  .profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Icon menu below navbar */
+  .icon-menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 40px;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    flex-wrap: wrap;
+  }
+
+  .icon-item {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .icon-item i {
+    font-size: 24px;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  

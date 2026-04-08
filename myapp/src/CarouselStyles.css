@@ -1,0 +1,176 @@
+/* Basic Reset/Overrides */
+.carousel-root {
+    width: 100%; /* Make carousel take full width */
+    margin: 0; /* Remove default margin */
+    box-shadow: none; /* Remove box shadow */
+    border-radius: 0; /* Remove rounded corners */
+    position: relative; /* Needed for full-screen effect */
+  }
+  
+  .carousel .slide {
+    background: none; /* Remove default background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh; /* Make slides take full viewport height */
+    overflow: hidden; /* Ensure image doesn't overflow */
+  }
+  
+  /* Image Styling */
+  .carousel .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the area */
+    object-position: center;
+    transition: transform 6s ease-in-out; /* Subtle zoom effect */
+  }
+  
+  .carousel .slide.selected img {
+      transform: scale(1.05); /* Zoom in slightly on the active slide */
+  }
+  
+  
+  /* Content Overlay Styling */
+  .carousel .slide .slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the content */
+    text-align: center;
+    color: #ffffff;
+    z-index: 10;
+    padding: 30px; /* Increased padding */
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker overlay */
+    border-radius: 12px; /* More rounded corners */
+    max-width: 90%; /* Allow content to be wider */
+    opacity: 0; /* Start hidden for fade-in animation */
+    transform: translate(-50%, -40px); /* Start slightly above center for slide-up */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Animation for fade-in and slide-up */
+  }
+  
+  .carousel .slide.selected .slide-content {
+      opacity: 1; /* Fade in when slide is selected */
+      transform: translate(-50%, -50%); /* Slide to center when selected */
+  }
+  
+  
+  .carousel .slide .slide-content h2 {
+    color: #ffffff;
+    font-size: 3.5rem; /* Larger heading */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* More prominent shadow */
+    font-weight: 700; /* Bold font */
+  }
+  
+  .carousel .slide .slide-content p {
+    font-size: 1.4rem; /* Larger paragraph text */
+    margin-bottom: 30px; /* More space below paragraph */
+    line-height: 1.6; /* Improved readability */
+  }
+  
+  .carousel .slide .slide-content .overlay-button {
+     display: inline-block;
+     background-color: #007bff;
+     color: #ffffff;
+     padding: 18px 40px; /* Larger button */
+     border-radius: 35px; /* More rounded button */
+     text-decoration: none;
+     font-weight: bold;
+     font-size: 1.2rem; /* Larger button text */
+     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+     border: none;
+     cursor: pointer;
+     text-transform: uppercase; /* Uppercase text */
+     letter-spacing: 1px; /* Add letter spacing */
+  }
+  
+  .carousel .slide .slide-content .overlay-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* More pronounced hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  /* Arrow Styling */
+  .carousel .control-arrow:before {
+    content: '\2039';
+    font-size: 60px; /* Even larger arrows */
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .carousel .control-next.control-arrow:before {
+    content: '\203a';
+  }
+  
+  .carousel .control-arrow:hover:before {
+    color: #007bff;
+    transform: scale(1.2); /* Slightly zoom arrows on hover */
+  }
+  
+  /* Arrow Position (adjust as needed) */
+  .carousel .control-prev {
+    left: 30px; /* Move arrows further inward */
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .carousel .control-next {
+    right: 30px;
+      opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .carousel .control-arrow:hover {
+      opacity: 1;
+  }
+  
+  
+  /* Hide arrows on small screens if desired */
+  @media (max-width: 768px) {
+    .carousel .control-arrow {
+      display: none;
+    }
+  
+    .carousel .slide .slide-content h2 {
+        font-size: 2rem; /* Adjust heading size for smaller screens */
+    }
+  
+     .carousel .slide .slide-content p {
+        font-size: 1rem; /* Adjust paragraph size for smaller screens */
+    }
+  
+     .carousel .slide .slide-content .overlay-button {
+        padding: 12px 25px; /* Adjust button padding */
+        font-size: 1rem; /* Adjust button font size */
+     }
+  }
+  
+  
+  /* Indicator (Dot) Styling */
+  .carousel .dots {
+    bottom: 20px; /* Position dots higher */
+    z-index: 11; /* Ensure dots are above the overlay */
+  }
+  
+  .carousel .dot {
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Add subtle shadow to dots */
+    opacity: 0.7; /* Slightly more visible inactive dots */
+    width: 12px; /* Larger dot size */
+    height: 12px;
+    margin: 0 6px; /* Adjust spacing between dots */
+    border-radius: 50%; /* Ensure dots are perfectly round */
+    transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .carousel .dot.selected {
+    background: #007bff;
+    opacity: 1;
+    width: 14px; /* Slightly larger active dot */
+    height: 14px;
+    transform: scale(1.2); /* Scale up the active dot */
+  }
